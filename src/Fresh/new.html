@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Designer & Developer</title>
+    <style>
+        /* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    transition: background-color 0.5s;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.split {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.designer {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.developer {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid currentColor;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark .designer {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+body.dark .developer {
+    background-color: #f0f0f0;
+    color: #222;
+}
+
+body.dark .theme-toggle {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+.split {
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="split designer">
+            <div class="content">
+                <h1>Designer</h1>
+                <p>Creating visually stunning and user-friendly designs.</p>
+            </div>
+        </div>
+        <div class="split developer">
+            <div class="content">
+                <h1>Developer</h1>
+                <p>Building responsive and efficient web applications.</p>
+            </div>
+        </div>
+    </div>
+    <button class="theme-toggle">Toggle Theme</button>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.querySelector(".theme-toggle");
+    const body = document.body;
+
+    themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+    });
+});// script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.querySelector(".theme-toggle");
+    const body = document.body;
+
+    // Toggle theme functionality
+    themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+    });
+
+    // Hover effect functionality
+    const heroSections = document.querySelectorAll(".split");
+
+    heroSections.forEach((section) => {
+        section.addEventListener("mouseenter", () => {
+            section.style.transform = "scale(1.1)";
+            section.style.zIndex = "1";
+        });
+
+        section.addEventListener("mouseleave", () => {
+            section.style.transform = "scale(1)";
+            section.style.zIndex = "0";
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>

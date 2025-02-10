@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Word Cloud</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            /* font-style: danc; */
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+        #all{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            /* font-style: danc; */
+            align-items: center;
+            min-height: 30vw;
+            background-color: #231a1a;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #dsa-cloud, #webD-cloud {
+            position: relative;
+            width: 40vw;
+            height: 30vw;
+            background-color: white;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            /* border-radius: 10px; */
+            overflow: hidden;
+        }
+
+        #dsa-cloud div {
+            position: absolute;
+            font-family: 'Dancing Script', cursive;
+            white-space: nowrap;
+        }
+
+        #webD-cloud div {
+            position: absolute;
+            font-family: 'Dancing Script', cursive;
+            white-space: nowrap;
+        }
+
+        /* Styling and positioning each word manually */
+        #dsa {
+            font-size: 90px;
+            color: black;
+            top: 150px;
+            left: 300px;
+        }
+
+        #runtime-error {
+            font-size: 60px;
+            color: rgb(181, 0, 0);
+            top: 70px;
+            left: 50px;
+        }
+
+        #dp {
+            font-size: 70px;
+            color: rgb(87, 201, 180);
+            top: 180px;
+            left: 450px;
+        }
+
+        #linkedlists {
+            font-size: 50px;
+            color: gray;
+            top: 240px;
+            left: 80px;
+        }
+
+        #tle {
+            font-size: 40px;
+            color: orange;
+            top: 300px;
+            left: 420px;
+        }
+
+        #coder {
+            font-size: 50px;
+            color: blue;
+            top: 120px;
+            left: 620px;
+        }
+
+        #crow {
+            font-size: 30px;
+            color: black;
+            top: 350px;
+            left: 300px;
+        }
+
+        #nikhil-patidar {
+            font-size: 25px;
+            color: green;
+            top: 50px;
+            left: 450px;
+        }
+
+        #stackoverflow {
+            font-size: 20px;
+            color: crimson;
+            top: 380px;
+            left: 120px;
+        }
+
+        #pointers {
+            font-size: 18px;
+            color: black;
+            top: 100px;
+            left: 250px;
+        }
+
+        #algorithms {
+            font-size: 15px;
+            color: purple;
+            top: 280px;
+            left: 200px;
+        }
+
+        #h {
+            font-size: 15px;
+            color: rgb(171, 245, 146);
+            top: 320px;
+            left: 500px;
+        }
+
+        #int-x {
+            font-size: 14px;
+            color: brown;
+            top: 350px;
+            left: 600px;
+        }
+
+        #dfs-bfs {
+            font-size: 14px;
+            color: black;
+            top: 400px;
+            left: 450px;
+        }
+        #skill-img{
+            position: absolute;
+            width: 50vw;
+            z-index: 1;
+            margin-bottom: 5vw;
+            border-image:fill;
+            filter: drop-shadow(10px -5px 5px #828282);
+            /* box-shadow: 0 0 5px 5px #231a1a; */
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <img src="./assets/IMG_20241222_0727572.png" alt="" id="skill-img">
+        <div id="dsa-cloud">
+            <div id="dsa">DSA</div>
+            <div id="runtime-error">Runtime error</div>
+            <div id="dp">DP</div>
+            <div id="linkedlists">linkedLists</div>
+            <div id="tle">TLE</div>
+            <div id="coder">&lt;Coder&gt;</div>
+            <div id="crow">CROW</div>
+            <div id="nikhil-patidar">Nikhil Patidar</div>
+            <div id="stackoverflow">stackOverflow</div>
+            <div id="pointers">Pointers</div>
+            <div id="algorithms">Algorithms</div>
+            <div id="h">.h/.hpp</div>
+            <div id="int-x">Int x = 5;</div>
+            <div id="dfs-bfs">DFS/BFS</div>
+        </div>
+        <div id="webD-cloud">
+            <div id="frontEnd">FrontEnd</div>
+            <div id="runtime-error">refrence error</div>
+            <div id="dp">React</div>
+            <div id="linkedlists">DOM</div>
+            <div id="tle">TLE</div>
+            <div id="coder">&lt;Coder&gt;</div>
+            <div id="crow">CROW</div>
+            <div id="nikhil-patidar">Nikhil Patidar</div>
+            <div id="stackoverflow">stackOverflow</div>
+            <div id="pointers">Pointers</div>
+            <div id="algorithms">Algorithms</div>
+            <div id="h">.h/.hpp</div>
+            <div id="int-x">Int x = 5;</div>
+            <div id="dfs-bfs">DFS/BFS</div>
+        </div>
+    </div>
+    <script>
+        function alignDefault() {
+            console.log(document.getElementById('dsa').getBoundingClientRect().top);
+
+
+            document.getElementById('dsa').style.top = `${(document.getElementById('dsa-cloud').getBoundingClientRect().top )/10 }vw`;
+            document.getElementById('dsa').style.left = `${(document.getElementById('dsa-cloud').getBoundingClientRect().left +300)/10}vw`;
+            
+            document.getElementById('dp').style.position = 'absolute';
+            document.getElementById('dp').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 40)/10}vw`;
+            document.getElementById('dp').style.left = `${(document.getElementById('dsa').getBoundingClientRect().left  -140)/10}vw`;
+
+
+            document.getElementById('runtime-error').style.position = 'absolute';
+            document.getElementById('runtime-error').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 100)/10}vw`;
+            document.getElementById('runtime-error').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 500)/10}vw`;
+            
+            
+            document.getElementById('nikhil-patidar').style.position = 'absolute';
+            document.getElementById('nikhil-patidar').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 40)/10}vw`;
+            document.getElementById('nikhil-patidar').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 600)/10}vw`;
+            
+
+
+            document.getElementById('tle').style.position = 'absolute';
+            document.getElementById('tle').style.top = `${(document.getElementById('dp').getBoundingClientRect().top + 10)/10}vw`;
+            document.getElementById('tle').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 300)/10}vw`;
+
+            
+            document.getElementById('algorithms').style.position = 'absolute';
+            document.getElementById('algorithms').style.top = `${(document.getElementById('nikhil-patidar').getBoundingClientRect().top +20)/10}vw`;
+            document.getElementById('algorithms').style.left = `${(document.getElementById('nikhil-patidar').getBoundingClientRect().left -80)/10}vw`;
+
+
+            document.getElementById('linkedlists').style.position = 'absolute';
+            document.getElementById('linkedlists').style.top = `${(document.getElementById('tle').getBoundingClientRect().top - 80 )/10}vw`;
+            document.getElementById('linkedlists').style.left = `${(document.getElementById('dsa').getBoundingClientRect().left -410)/10}vw`;
+            
+
+            document.getElementById('h').style.position = 'absolute';
+            document.getElementById('h').style.top = `${(document.getElementById('algorithms').getBoundingClientRect().top - 110)/10}vw`;
+            document.getElementById('h').style.left = `${(document.getElementById('algorithms').getBoundingClientRect().left - 220)/10}vw`;
+
+
+
+            document.getElementById('crow').style.position = 'absolute';
+            document.getElementById('crow').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top + 20)/10}vw`;
+            document.getElementById('crow').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 390 )/10}vw`;
+
+
+            document.getElementById('stackoverflow').style.position = 'absolute';
+            document.getElementById('stackoverflow').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top -10)/10}vw`;
+            document.getElementById('stackoverflow').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 390 )/10}vw`;
+
+
+            document.getElementById('coder').style.position = 'absolute';
+            document.getElementById('coder').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top - 100)/10}vw`;
+            document.getElementById('coder').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 440 )/10}vw`;
+
+
+            document.getElementById('pointers').style.position = 'absolute';
+            document.getElementById('pointers').style.top = `${(document.getElementById('coder').getBoundingClientRect().top -20 )/10}vw`;
+            document.getElementById('pointers').style.left = `${(document.getElementById('coder').getBoundingClientRect().left -250 )/10}vw`;
+
+
+            document.getElementById('dfs-bfs').style.position = 'absolute';
+            document.getElementById('dfs-bfs').style.top = `${(document.getElementById('crow').getBoundingClientRect().top -60 )/10}vw`;
+            document.getElementById('dfs-bfs').style.left = `${(document.getElementById('crow').getBoundingClientRect().left -220 )/10}vw`;
+
+
+            document.getElementById('int-x').style.position = 'absolute';
+            document.getElementById('int-x').style.top = `${(document.getElementById('dp').getBoundingClientRect().top -90 )/10}vw`;
+            document.getElementById('int-x').style.left = `${(document.getElementById('dp').getBoundingClientRect().left -320 )/10}vw`;
+
+
+        }
+        function alignHovered() {
+            
+        
+            document.getElementById('dsa').style.top = `${10}vw`;
+            document.getElementById('dsa').style.left = `${40}vw`;
+            
+            document.getElementById('dp').style.position = 'absolute';
+            document.getElementById('dp').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 40)/10}vw`;
+            document.getElementById('dp').style.left = `${(document.getElementById('dsa').getBoundingClientRect().left  -140)/10}vw`;
+
+
+            document.getElementById('runtime-error').style.position = 'absolute';
+            document.getElementById('runtime-error').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 10)/10}vw`;
+            document.getElementById('runtime-error').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 600)/10}vw`;
+            
+            
+            document.getElementById('nikhil-patidar').style.position = 'absolute';
+            document.getElementById('nikhil-patidar').style.top = `${(document.getElementById('dsa').getBoundingClientRect().top - 40)/10}vw`;
+            document.getElementById('nikhil-patidar').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 600)/10}vw`;
+            
+
+
+            document.getElementById('tle').style.position = 'absolute';
+            document.getElementById('tle').style.top = `${(document.getElementById('dp').getBoundingClientRect().top + 10)/10}vw`;
+            document.getElementById('tle').style.left = `${(document.getElementById('dsa').getBoundingClientRect().right - 300)/10}vw`;
+
+            
+            document.getElementById('algorithms').style.position = 'absolute';
+            document.getElementById('algorithms').style.top = `${(document.getElementById('nikhil-patidar').getBoundingClientRect().top +20)/10}vw`;
+            document.getElementById('algorithms').style.left = `${(document.getElementById('nikhil-patidar').getBoundingClientRect().left -80)/10}vw`;
+
+
+            document.getElementById('linkedlists').style.position = 'absolute';
+            document.getElementById('linkedlists').style.top = `${(document.getElementById('tle').getBoundingClientRect().top - 80 )/10}vw`;
+            document.getElementById('linkedlists').style.left = `${(document.getElementById('dsa').getBoundingClientRect().left -410)/10}vw`;
+            
+
+            document.getElementById('h').style.position = 'absolute';
+            document.getElementById('h').style.top = `${(document.getElementById('algorithms').getBoundingClientRect().top - 110)/10}vw`;
+            document.getElementById('h').style.left = `${(document.getElementById('algorithms').getBoundingClientRect().left - 220)/10}vw`;
+
+
+
+            document.getElementById('crow').style.position = 'absolute';
+            document.getElementById('crow').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top + 20)/10}vw`;
+            document.getElementById('crow').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 390 )/10}vw`;
+
+
+            document.getElementById('stackoverflow').style.position = 'absolute';
+            document.getElementById('stackoverflow').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top -10)/10}vw`;
+            document.getElementById('stackoverflow').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 390 )/10}vw`;
+
+
+            document.getElementById('coder').style.position = 'absolute';
+            document.getElementById('coder').style.top = `${(document.getElementById('runtime-error').getBoundingClientRect().top - 100)/10}vw`;
+            document.getElementById('coder').style.left = `${(document.getElementById('runtime-error').getBoundingClientRect().left - 440 )/10}vw`;
+
+
+            document.getElementById('pointers').style.position = 'absolute';
+            document.getElementById('pointers').style.top = `${(document.getElementById('coder').getBoundingClientRect().top -20 )/10}vw`;
+            document.getElementById('pointers').style.left = `${(document.getElementById('coder').getBoundingClientRect().left -250 )/10}vw`;
+
+
+            document.getElementById('dfs-bfs').style.position = 'absolute';
+            document.getElementById('dfs-bfs').style.top = `${(document.getElementById('crow').getBoundingClientRect().top -60 )/10}vw`;
+            document.getElementById('dfs-bfs').style.left = `${(document.getElementById('crow').getBoundingClientRect().left -220 )/10}vw`;
+
+
+            document.getElementById('int-x').style.position = 'absolute';
+            document.getElementById('int-x').style.top = `${(document.getElementById('dp').getBoundingClientRect().top -90 )/10}vw`;
+            document.getElementById('int-x').style.left = `${(document.getElementById('dp').getBoundingClientRect().left -320 )/10}vw`;
+
+        }
+        alignDefault();
+        document.getElementById('dsa-cloud').addEventListener('mouseover', () => {
+            alignHovered();
+        })
+        document.getElementById('dsa-cloud').addEventListener('mouseleave', () => {
+            alignDefault();
+        })
+        document.getElementById('webD-cloud').addEventListener('mouseover', () => {
+            alignHovered();
+        })
+        document.getElementById('webD-cloud').addEventListener('mouseleave', () => {
+            alignDefault();
+        })
+    </script>
+</body>
+</html>

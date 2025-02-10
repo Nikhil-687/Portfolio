@@ -1,0 +1,26 @@
+html{
+  width: 130vw;
+  background-color: rgb(255, 255, 255);
+}
+body {
+    margin: 0;
+    display: block;
+    /* max-width: 100vw; */
+    scrollbar-width: none;
+    overflow-x: hidden;
+    /* place-items: center; */
+    /* min-width: 320px; */
+    min-height: 100vh;
+  }
+
+  .root{
+    padding: 0vw;
+    padding-bottom: 10vw;
+    /* clip-path: ellipse(100% 90% at 50% 0%); */
+    box-shadow: 0 0 black;
+  }
+  
+  #box
+  {
+    clip-path: ellipse(100% 20% at 50% 0%);
+  }

@@ -1,0 +1,16 @@
+export default function About(){
+    return(
+        <>
+            <div id="toShadow">
+                <div style={{display: "flex",justifyContent: "end"}}>
+                    <button id="toTerminalize" class="toShadow" style={{padding: "0.5rem 1rem",fontSize: "1rem"}}>Terminalize</button>
+                </div>
+                <h1>About</h1>
+                <hr style={{opacity: "0.7",color: "brown"}}/>
+                <p>I am a passionate and dedicated front-end developer with a strong foundation in data structures and algorithms (DSA) with C/C++. My expertise spans across front-end technologies like HTML, CSS, JavaScript, and React, which allow me to create dynamic, user-friendly web applications.</p>
+                <p>I have in depth learned concepts of Data structures and algorithms using c/c++ language, also am a good lerner of web development and have very good knowledge of Frontend, I have ranked in top 508,916 in div-3 and 1948 in div-4 of codechef  and 5273 in leetcode dsa contests, student of JEC. With a problem-solving mindset honed through DSA, I approach development with precision, optimizing code for both performance and scalability. I am constantly learning and evolving in the ever-changing landscape of web technologies, and I thrive on tackling complex challenges while delivering seamless, interactive experiences for users.</p>
+                <button className="toShadow">Read Me</button>
+            </div>
+        </>
+    )
+}
