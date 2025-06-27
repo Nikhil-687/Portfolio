@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import { useEffect } from "react";
 
 export default function Page(){
     const [prev, setPrev] = useState([[{zero:"help",one: ["exit or ctrl^C to exit the Lab."],two: "~/AnantLAB"}]]);
@@ -20,12 +21,6 @@ export default function Page(){
             return ["ls command new to our system."];
         }
     })
-    setPath(path);
-    setValues(values);
-    setCommand(command);
-    setCommandNames(commandNames);
-
-
     // FILES AND FOLDERS
     const [Files, setFiles] = useState({
         "home":[{
@@ -95,7 +90,14 @@ export default function Page(){
     })
 
 
-    setFiles(Files);
+
+    useEffect(() => {
+        setPath(path);
+        setValues(values);
+        setCommand(command);
+        setCommandNames(commandNames);
+        setFiles(Files);
+    }, []);
 
     function isCommand(e: string){
         let z = 1; 
