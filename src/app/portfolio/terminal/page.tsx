@@ -6,7 +6,10 @@ export default function Page(){
     const [path, setPath] = useState("~/AnantOSLAB");
     const [input, setInput] = useState("");
     const [index, setIndex] = useState(0);
-    const [values, setValues] = useState({"help" : ["exit or ctrl^C to exit the Lab."], "new":["A test command dont use it if you love your computer"]});
+    const [values, setValues] = useState<{ [key: string]: string[] }>({
+        help: ["exit or ctrl^C to exit the Lab."],
+        new: ["A test command don't use it if you love your computer"]
+      });
     const [commandNames, setCommandNames] = useState(["help", "new", "cd"]);
     const [command, setCommand] = useState({
         "cd" :  () => {
