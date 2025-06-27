@@ -13,9 +13,10 @@
     -moz-osx-font-smoothing: grayscale;
     --full-height: 100vh;
     --height-100: 102px;
-    --height-20vh: 10vh;
+    --height-10vh: 10vh;
     --new-height: calc(var(--full-height)- var(--height-100));
-    --center-height: calc(var(--full-height)- var(--height-100)- var(--height-20vh));
+    --center-height1: calc(var(--full-height)- var(--height-100));
+    --center-height: calc(var(--center-height1)- var(--height-10vh));
     --center-image-height: calc(90vh - 150px);
 
 
