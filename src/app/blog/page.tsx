@@ -1,10 +1,10 @@
 "use client"
 import Nav from "@/app/components/Nav"
 import { useEffect } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 import Dev from "./../../../public/assets/Developer.png"
-import TechDev from "./../../../public/assets/TechDev.png"
+// import TechDev from "./../../../public/assets/TechDev.png"
 import DevBackground from "./../../../public/assets/cDesigner.png"
 import TechDevBackground from "./../../../public/assets/coder.png"
 import "@/app/styles.css"
@@ -25,9 +25,10 @@ export default function Blogs(){
         // }, 1000);
   
     }, []);
-    let blogId = "alongstring";
-    let blogId2 = "newlongstring";
-    let blogId3= "freshnewlongstring";
+    const blogId = "alongstring";
+    const blogId2 = "newlongstring";
+    const blogId3= "freshnewlongstring";
+    
     return(
         <>
           <div id="home-blog" style={{textAlign:"center", backgroundColor:"white"}}>

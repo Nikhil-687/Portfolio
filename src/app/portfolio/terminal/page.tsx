@@ -17,6 +17,10 @@ export default function Page(){
             return ["ls command new to our system."];
         }
     })
+    setPath(path);
+    setValues(values);
+    setCommand(command);
+    setCommandNames(commandNames);
 
 
     // FILES AND FOLDERS
@@ -88,7 +92,7 @@ export default function Page(){
     })
 
 
-
+    setFiles(Files);
 
     function isCommand(e: string){
         let z = 1; 
@@ -109,7 +113,6 @@ export default function Page(){
         return [{zero: e, one: values[e], two : path}];
     }
     function handleSubmit(e: string, keyType: "Enter" | "ArrowDown" | "ArrowUp"){
-        let temp = e;
         function trim(e: string){
             let a = "";
             for(let i = 0;i < e.length && (e[i] >= 'A' && e[i] <= 'Z') || (e[i] >= 'a' && e[i] <= 'z');i++){
@@ -155,9 +158,10 @@ export default function Page(){
             <div id="prev">
                 {
                     prev.map((val, ind) => (
-                        <div>            
+                        <div>
                             <p>{val[0].two}{' > '}{val[0].zero}</p> 
                             {/* <br /> */}
+                            <div style={{display:"none"}}>{ind}</div>
                             <p style={{paddingLeft:"4vw"}}>{
                                 val[0].one.map((output, index) => (
                                     <>
