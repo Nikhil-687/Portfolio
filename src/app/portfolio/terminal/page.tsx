@@ -158,7 +158,7 @@ export default function Page(){
             <div id="prev">
                 {
                     prev.map((val, ind) => (
-                        <div>
+                        <div key={ind}>
                             <p>{val[0].two}{' > '}{val[0].zero}</p> 
                             {/* <br /> */}
                             <div style={{display:"none"}}>{ind}</div>
