@@ -1,7 +1,7 @@
 "use client"
 import Nav from "./../../components/Nav"
 import { useEffect } from "react";
-export default function({id}){
+export default function(){
     useEffect(() => {
           const navs = document.getElementsByClassName('navPopUp');
           if (navs.length > 0) {  
