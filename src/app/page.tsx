@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <div id="home">
+      <div id="home" style={{height:"100vh"}}>
         <div id="nav">
           <Nav />
         </div>
