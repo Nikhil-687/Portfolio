@@ -5,8 +5,8 @@ import { useEffect } from "react";
 
 import Dev from "./../../../public/assets/Developer.png"
 // import TechDev from "./../../../public/assets/TechDev.png"
-import DevBackground from "./../../../public/assets/cDesigner.png"
-import TechDevBackground from "./../../../public/assets/coder.png"
+// import DevBackground from "./../../../public/assets/cDesigner.png"
+// import TechDevBackground from "./../../../public/assets/coder.png"
 import "@/app/styles.css"
 
 import Blog from "./../components/Blog"
