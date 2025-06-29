@@ -99,6 +99,11 @@ body {
     height: 100px;
     align-items: center;
     font-size: 2vw;
+    background-color: #232323;
+    
+}
+.Nav-comp{
+    color: #bbb;
 }
 .height0{
     height: 0;
@@ -121,4 +126,11 @@ body {
 }
 #main-img--left{
     width: var(--width-left);
+}
+.white{
+    background-color: #dbd9d9;
+    *{
+        color: #000000;
+    }
+    
 }

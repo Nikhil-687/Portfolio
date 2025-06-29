@@ -1,9 +1,11 @@
 "use client"
 import { useState } from "react"
 import { useEffect } from "react";
+import Nav from "./../../components/Nav.jsx";
+import "./../../styles.css"
 
 export default function Page(){
-    const [prev, setPrev] = useState([[{zero:"help",one: ["exit or ctrl^C to exit the Lab."],two: "~/AnantLAB"}]]);
+    const [prev, setPrev] = useState([[{zero:"help",one: ["exit or ctrl^C to exit the Lab."],two: "~/AnantOSLAB"}]]);
     const [path, setPath] = useState("~/AnantOSLAB");
     const [input, setInput] = useState("");
     const [index, setIndex] = useState(0);
@@ -90,6 +92,15 @@ export default function Page(){
     })
 
 
+    useEffect(() => {
+
+        const navs = document.getElementsByClassName('navPopUp');
+        if (navs.length > 0) {  
+          navs[0].classList.toggle('height0');
+          navs[0].classList.add('white')
+        }
+      }, []);
+    
 
     useEffect(() => {
         setPath(path);
@@ -159,6 +170,9 @@ export default function Page(){
         input?.focus();
     }
     return (
+        <div>
+            
+        <Nav></Nav>
         <div style={{height:"100vh", width:"100vw", background:"#232323", padding:"10vh 10vw", overflow:"hidden", overflowY:"scroll", scrollbarWidth:"none"}} onClick={focusInput}>
             <div id="prev">
                 {
@@ -187,11 +201,12 @@ export default function Page(){
                     </strong>
                 </p>
                 <input id="Input" type="text" style={{outline:"none", width:"80vw"}} onChange={(e) => {setInput(e.target.value)}} onKeyDown={(e) => {
-                                                                if (e.key == "Enter" || e.key == "ArrowDown" || e.key == "ArrowUp") {
-                                                                    handleSubmit(input, e.key)
-                                                                }
-                                                              }}/>
+                    if (e.key == "Enter" || e.key == "ArrowDown" || e.key == "ArrowUp") {
+                        handleSubmit(input, e.key)
+                    }
+                }}/>
             </div>
         </div>
+    </div>
     )
 }

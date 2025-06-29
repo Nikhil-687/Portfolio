@@ -6,7 +6,7 @@ import codeforces from "./../../../public/assets/logos/codeforces.png"
 export default function Nav(){
     return (
         <>
-            <div className="navPopUp height0" style={{overflow:"hidden", background:"#232323", display:"flex", transitionDuration:"1s", justifyContent:"space-evenly", width:"100vw"}}>
+            <div className="navPopUp height0" style={{overflow:"hidden", display:"flex", transitionDuration:"1s", justifyContent:"space-evenly", width:"100vw"}}>
                 <div style={{height:"100%", alignContent:"center"}}>
                     <a href="/">
                         <Image src={Logo} alt="" style={{width:"70px", height:"70px", borderRadius:"100%"}}></Image>        
@@ -14,16 +14,20 @@ export default function Nav(){
                </div>
                 <div style={{height:"100%"}}>
                     <ul style={{display:"flex", width:"45vw", justifyContent:"end", alignItems:"center", gap:"3vw", fontSize:"1.6vw", color:"#000", cursor:"pointer", height:"100%"}}>
-                        <li style={{color:"#bbb"}}>About</li>
-                        <li style={{color:"#bbb"}}>learn</li>
+                        <a href="/about">
+                            <li className="Nav-comp" style={{color:"#"}}>About</li>
+                        </a>
+                        {/* <a href="">
+                            <li className="Nav-comp" style={{color:"#"}}>learn</li>
+                        </a> */}
                         <a href="/portfolio">
-                            <li style={{color:"#bbb"}}>portfolio</li>
+                            <li className="Nav-comp" style={{color:"#"}}>portfolio</li>
                         </a>
                         <a href="/blog">
-                            <li style={{color:"#bbb"}}>blog</li>
+                            <li className="Nav-comp" style={{color:"#"}}>blog</li>
                         </a>
                         <a href="/contact">
-                            <li style={{color:"#bbb"}}>contact</li>
+                            <li className="Nav-comp" style={{color:"#"}}>contact</li>
                         </a>
                     </ul>
                 </div>
@@ -40,7 +44,7 @@ export default function Nav(){
                         <a style={{minWidth:"40px"}} href="https://codeforces.com/profile/Nikhil_Patidar687">
                             <Image style={{width:"35px", height:"35px"}} src={codeforces} alt=""></Image>
                         </a>
-                        <a href="/portfolio/terminal">
+                        <a className="Nav-comp" href="/portfolio/terminal">
                             AnatLAB
                         </a>
                     </div>

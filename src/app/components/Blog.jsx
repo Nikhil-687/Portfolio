@@ -11,7 +11,7 @@ export default function Blog({usr, head, desc, postDate, reach, comments, img}){
     img = img || Dev;
     return(
         <>
-            <div style={{textAlign:"center", width:"60vw", margin:"2vh 0 4vh 4vw", border:"2px solid rgb(122, 117, 117)", marginLeft:"20vw", display:"flex", alignContent:"center", alignItems:"center", borderRadius:"15px", padding:"1px 0 0 3vw", height:"40vh"}}>
+            <div style={{textAlign:"center", width:"60vw", margin:"2vh 0 4vh 4vw", border:"2px solid rgb(122, 117, 117)", marginLeft:"20vw", display:"flex", alignContent:"center", alignItems:"center", borderRadius:"15px", padding:"2px 0 5vh 3vw", height:"40vh"}}>
                 <div style={{minWidth:"50vw", height:"30vh", textAlign:"start", padding:"0 2vw"}}>
                   <p style={{color:"#323232"}}>{usr}</p>
                   <h2 style={{fontSize:"2.3vw", fontWeight:"800", color:"#010110"}}>{head}</h2>

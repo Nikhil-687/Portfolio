@@ -25,9 +25,7 @@ export default function Blogs(){
         // }, 1000);
   
     }, []);
-    const blogId = "alongstring";
-    const blogId2 = "newlongstring";
-    const blogId3= "freshnewlongstring";
+    const blogId = "290620251";
     
     return(
         <>
@@ -39,34 +37,12 @@ export default function Blogs(){
               <a href={`/blog/${blogId}`} style={{alignItems:"center"}}>
                 <Blog 
                   usr="Nikhil" 
-                  head={"AI killed my coding brain and I'm rebuilding it"} 
-                  desc={"we sprinted into the AI age of Autocomplete IDEsnow we're walking up wondering we we forgot howto write a for loop"}
-                  postDate={"20 May"}
-                  reach={20}
-                  comments={30}
+                  head={"Amazed to use my own written file go-main.sh"} 
+                  desc={"Found a very amazing use case of a very basic script i have written it to just swich usr and reboot automatically. BUt unexpectedly yesterday got my self trapped in grub rescue login screen no way to enter main user because username was containing a space thats not read by shell there, finally somehow hit to login to guest usr which was having this saver file go-main.sh which just redirected me to main os with in 20 secs not a very big deal but found myself too much happy using my sript that give me a lot of confidence that actualy i can write production ready scripts also i can rome here and there in whole pc."}
+                  postDate={"29 june 2025"}
+                  reach={1}
+                  comments={0}
                   img={Dev}
-                  />
-              </a>
-              <a href={`/blog/${blogId2}`} style={{justifyItems:"center"}}>
-                <Blog 
-                  usr="Nikhil" 
-                  head={"AI killed my coding brain and I'm rebuilding it"} 
-                  desc={"we sprinted into the AI age of Autocomplete IDEsnow we're walking up wondering we we forgot howto write a for loop"}
-                  postDate={"20 May"}
-                  reach={20}
-                  comments={30}
-                  img={TechDevBackground}
-                  />
-              </a>
-              <a href={`/blog/${blogId3}`} style={{justifyItems:"center"}}>
-                <Blog 
-                  usr="Nikhil" 
-                  head={"AI killed my coding brain and I'm rebuilding it"} 
-                  desc={"we sprinted into the AI age of Autocomplete IDEsnow we're walking up wondering we we forgot howto write a for loop"}
-                  postDate={"20 May"}
-                  reach={20}
-                  comments={30}
-                  img={DevBackground}
                   />
               </a>
             </div>
